@@ -1,4 +1,5 @@
 # jenkin-101
+```
 pipeline {
     agent any 
     stages {
@@ -24,3 +25,4 @@ pipeline {
         }
     }
 }
+```
