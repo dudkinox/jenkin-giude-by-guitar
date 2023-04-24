@@ -26,3 +26,4 @@ pipeline {
     }
 }
 ```
+# จากนั้นผูก webhook กับ repo
