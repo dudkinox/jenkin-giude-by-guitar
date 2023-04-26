@@ -1,4 +1,6 @@
 # jenkin-101
+
+ใช้กับ repo public
 ```
 pipeline {
     agent any 
