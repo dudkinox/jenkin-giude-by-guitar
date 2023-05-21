@@ -53,8 +53,9 @@ pipeline {
         }
         stage('Test when'){
             when {
-                branch 'main'
-                // environment name: 'NODE_VERSION', value: '17.9'
+                expression {
+                    return NODE_VERSION == '17.9'
+                }
             }
             steps {
                 sh 'echo "This is main branch"'
