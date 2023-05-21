@@ -6,7 +6,7 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/dudkinox/jenkin-giude-by-guitar'
             }
         }
-        stage(Check file list’) {
+        stage('Check file list') {
             steps { 
                 sh 'ls -l'
             }
