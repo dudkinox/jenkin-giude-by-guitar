@@ -1,26 +1,27 @@
 # jenkin-101
 
-ใช้กับ repo public 
+ใช้กับ repo public
+
 ```
 pipeline {
-    agent any 
+    agent any
     stages {
-        stage('Build') { 
+        stage('Build') {
             steps {
                 git branch: 'main', url: 'https://github.com/dudkinox/jenkin-101'
             }
         }
-        stage('Docker image') { 
+        stage('Docker image') {
             steps {
                 sh "echo Docker image"
             }
         }
-        stage('Deploy') { 
+        stage('Deploy') {
             steps {
                 sh "echo Deploy"
             }
         }
-        stage('Discord noti') { 
+        stage('Discord noti') {
             steps {
                 sh "echo Discord noti"
             }
@@ -28,25 +29,26 @@ pipeline {
     }
 }
 ```
+
 # จากนั้นผูก webhook กับ repo
 
 ถ้าต้องการใช้ commit จาก github มาแสดง และส่ง แจ้งเตือน discord
 
-```
+````
 pipeline {
-    agent any 
+    agent any
     stages {
-        stage('Build') { 
+        stage('Build') {
             steps {
                 git branch: 'main', url: 'https://github.com/dudkinox/jenkin-giude-by-guitar'
             }
         }
-        stage('Docker image') { 
+        stage('Docker image') {
             steps {
                 sh "echo Docker image"
             }
         }
-        stage('Deploy') { 
+        stage('Deploy') {
             steps {
                 sh "echo Deploy"
             }
@@ -74,5 +76,4 @@ pipeline {
         }
     }
 }
-```
-
+````
