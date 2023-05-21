@@ -1,7 +1,8 @@
 pipeline {
     agent any
     environment {
-        NODE_VERSION = '17.9'
+        ENV_JENKINS = 'env.BUILD_NUMBER'
+        ENV_JENKINS_1 = "env.BUILD_NUMBER"
     }
     stages {
         stage('Clone sources') {
@@ -30,6 +31,8 @@ pipeline {
             steps {
                 sh 'printenv'
                 sh 'echo $NODE_VERSION'
+                sh 'echo $ENV_JENKINS'
+                sh 'echo $ENV_JENKINS_1'
             }
         }
     }
