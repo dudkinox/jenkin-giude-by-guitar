@@ -17,11 +17,6 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/dudkinox/jenkin-giude-by-guitar'
             }
         }
-        stage('Check file list') {
-            steps { 
-                sh 'ls -l'
-            }
-        }
         stage('Show index.js') {
             steps { 
                 sh """
@@ -59,7 +54,17 @@ pipeline {
             }
             steps {
                 sh 'echo "This is main branch"'
-                sh 'echo $NODE_VERSION'
+            }
+        }
+        stage('Test all of'){
+            when {
+                allOf {
+                    branch 'main'
+                    environment name: 'ENV_JENKINS', value: '$BUILD_NUMBER'
+                }
+            }
+            steps {
+                sh 'echo "This is main branch"'
             }
         }
     }
