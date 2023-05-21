@@ -13,9 +13,7 @@ pipeline {
         }
         stage('Show index.js') {
             steps { 
-                sh 'cd src'
-                sh 'ls -l'
-                sh 'cat index.js'
+                sh """cd src && ls -l && cat index.js"""
             }
         }
     }
