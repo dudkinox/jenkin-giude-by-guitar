@@ -13,7 +13,11 @@ pipeline {
         }
         stage('Show index.js') {
             steps { 
-                sh """cd src && ls -l && cat index.js"""
+                sh """
+                    cd src 
+                    ls -l
+                    cat index.js
+                """
             }
         }
     }
