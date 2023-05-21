@@ -54,7 +54,7 @@ pipeline {
         stage('Test when'){
             when {
                 expression {
-                    return NODE_VERSION == '17.9'
+                    return true
                 }
             }
             steps {
