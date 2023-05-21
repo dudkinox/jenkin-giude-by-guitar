@@ -38,7 +38,7 @@ pipeline {
                 sh 'echo $NODE_VERSION'
                 sh 'echo $ENV_JENKINS'
                 sh 'echo $ENV_JENKINS_1'
-                sh "echo $payload.content"
+                sh "echo ${payload.content}"
             }
         }
     }
