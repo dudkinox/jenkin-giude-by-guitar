@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+    stages {
+        stage('Clone sources') {
+            steps {
+                git branch: 'main', url: 'https://github.com/dudkinox/jenkin-giude-by-guitar'
+            }
+        }
+        stage(Check file list’) {
+            steps { 
+                sh 'ls -l'
+            }
+        }
+        stage('Show index.js') {
+            steps { //ในโปรเจคต้องมี index.js
+                sh 'cd src'
+                sh 'cat index.js'
+            }
+        }
+    }
+}
