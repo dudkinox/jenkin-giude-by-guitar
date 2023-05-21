@@ -28,17 +28,11 @@ pipeline {
             environment {
                 NODE_VERSION = '17.9'
             }
-            def commitMessage = sh(script: 'git log -1 --pretty=%B', returnStdout: true).trim()
-
-            def payload = [
-                'content': commitMessage
-            ]
             steps {
                 sh 'printenv'
                 sh 'echo $NODE_VERSION'
                 sh 'echo $ENV_JENKINS'
                 sh 'echo $ENV_JENKINS_1'
-                sh "echo ${payload.content}"
             }
         }
     }
