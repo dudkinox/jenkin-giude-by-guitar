@@ -1,8 +1,8 @@
 pipeline {
     agent any
     environment {
-        ENV_JENKINS = 'env.BUILD_NUMBER'
-        ENV_JENKINS_1 = "env.BUILD_NUMBER"
+        ENV_JENKINS = '$BUILD_NUMBER'
+        ENV_JENKINS_1 = "$BUILD_NUMBER"
     }
     stages {
         stage('Clone sources') {
