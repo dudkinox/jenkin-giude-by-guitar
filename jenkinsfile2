@@ -67,5 +67,16 @@ pipeline {
                 sh 'echo "This is main branch"'
             }
         }
+        stage('Test script'){
+            steps {
+                script {
+                    if (env.BUILD_NUMBER == '1') {
+                        echo 'This is first build'
+                    } else {
+                        echo 'This is not first build'
+                    }
+                }
+            }
+        }
     }
 }
